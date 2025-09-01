@@ -20,4 +20,4 @@ Cada forma foi implementada em um método separado, facilitando a organização 
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repo.git
+   git clone https://github.com/tominagacaio/Estrutura-repeticao-desenho
