@@ -39,66 +39,36 @@ namespace MyApp
 
         static void DesenhoCubo()
         {
+            int altura = 6;   // altura do cubo
+            int largura = 6;   // largura do cubo
+            int profundidade = 3; // profundidade do cubo (linhas inclinadas)
+
+            // Topo do cubo
+            Console.WriteLine(new string(' ', profundidade) + " " + new string('_', largura));
+
+            // Lados inclinados (superior)
+            for (int i = 0; i < profundidade; i++)
             {
-                int altura = 5; // tamanho do cubo (altura/largura)
-
-                // Parte superior do cubo
-                for (int i = 0; i < altura; i++)
-                {
-                    Console.Write(" ");
-                }
-                for (int i = 0; i < altura; i++)
-                {
-                    Console.Write("_");
-                }
-                Console.WriteLine();
-
-                // Parte do meio (faces laterais)
-                for (int i = 0; i < altura; i++)
-                {
-                    // Espaços para dar o efeito 3D
-                    for (int j = altura - 1; j > i; j--)
-                    {
-                        Console.Write(" ");
-                    }
-
-                    // Face frontal (esquerda)
-                    Console.Write("/");
-
-                    // Parte interna da face frontal
-                    for (int j = 0; j < altura; j++)
-                    {
-                        Console.Write(" ");
-                    }
-
-                    // Face lateral direita
-                    Console.Write("/");
-
-                    // Parte de trás (só em algumas linhas)
-                    for (int j = 0; j < i; j++)
-                    {
-                        Console.Write(" ");
-                    }
-
-                    // Fecha a lateral
-                    Console.Write("|");
-                    Console.WriteLine();
-                }
-
-                // Parte inferior do cubo (base)
-                Console.Write("|");
-                for (int i = 0; i < altura; i++)
-                {
-                    Console.Write("_");
-                }
-                Console.Write("|");
-
-                for (int i = 0; i < altura - 1; i++)
-                {
-                    Console.Write(" ");
-                }
-                Console.Write("|");
+                Console.WriteLine(new string(' ', profundidade - i - 1) + " /" + new string(' ', largura) + "/" + new string(' ', i) + "|");
             }
+
+            // Frente superior
+            Console.WriteLine("/" + new string('_', largura) + "/" + new string(' ', profundidade) + "|");
+
+            // Laterais retas
+            for (int i = 0; i < altura; i++)
+            {
+                Console.WriteLine("|" + new string(' ', largura) + "|" + new string(' ', profundidade) + "|");
+            }
+
+            // Base inclinada
+            for (int i = 0; i < profundidade; i++)
+            {
+                Console.WriteLine("|" + new string(' ', largura) + "|" + new string(' ', profundidade - i - 1) + "/");
+            }
+
+            // Base do cubo
+            Console.WriteLine("|" + new string('_', largura) + "|");
         }
 
         static void DesenhoLosango()
